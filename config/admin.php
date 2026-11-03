@@ -2,24 +2,35 @@
 
 declare(strict_types=1);
 
-/*
- * تَوان | Tavaan — Admin
- * config/admin.php — پیکربندی پیشخوان (DOC-078 §12).
+/*|--------------------------------------------------------------------------
+ | Admin Engine Configuration
+ |--------------------------------------------------------------------------
+ |
+ | پیکربندی موتور admin — همهٔ کلیدهای مستندشده در `docs/03-engines/admin.md` بخش «پیکربندی».
+ |
+ |@see https://github.com/Derogaramin/Tavaan-Doc/blob/main/docs/03-engines/admin.md
  */
 
 return [
-    // segment اول مسیرهای پیشخوان: /admin/...
-    'prefix' => env_string('TVN_ADMIN_PREFIX', 'admin'),
+    /*| پیش‌فرض موتور (driver/store یا حالت فعال) */
+    'default' => env('ADMIN_DEFAULT', 'default'),
 
-    // گارد احراز هویت (AuthenticateMiddleware) — null = گارد پیش‌فرض
-    'guard' => env_string('TVN_ADMIN_GUARD', 'web'),
+    /*| کلید کش (در صورت استفاده) */
+    'prefix' => env('ADMIN_PREFIX', 'admin:'),
 
-    // تعداد ردیف هر صفحه در فهرست‌ها (پیش‌فرضِ resource->perPage)
-    'per_page' => env_int('TVN_ADMIN_PER_PAGE', 25),
+    /*| تنظیمات لاگ */
+    'log' => [
+        'channel' => env('ADMIN_LOG_CHANNEL', 'admin'),
+    ],
 
-    // میان‌بر resourceها در منو
-    'menu' => [
-        'dashboard_label' => 'داشبورد',
-        'auto_resources' => true,
+    /*| Facade */
+    'facade' => [
+        'name' => 'Admin',
+        'accessor' => 'admin',
+    ],
+
+    /*| سایر کلیدها (طبق مستندات) */
+    'options' => [
+        // TODO: کلیدهای اضافی طبق سند §۶ (پیکربندی)
     ],
 ];
