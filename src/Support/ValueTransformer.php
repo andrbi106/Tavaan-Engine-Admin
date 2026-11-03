@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Tavaan\Engine\Admin\Support;
 
 use Tavaan\Core\Contracts\Container\ContainerInterface;
-use Tavaan\Core\Contracts\Encryption\HasherInterface;
+use Tavaan\Engine\Crypt\Contracts\HasherInterface;
 use Tavaan\Engine\Admin\Form\Field;
 use Tavaan\Engine\I18n\Jalali\Jalali;
 use Tavaan\Engine\Security\Sanitize\HtmlSanitizer;

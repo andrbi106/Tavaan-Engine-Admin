@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tavaan\Engine\Admin\Http;
 
 use Tavaan\Core\Contracts\Container\ContainerInterface;
-use Tavaan\Core\Exceptions\Http\ForbiddenException;
-use Tavaan\Core\Exceptions\Http\RouteNotFoundException;
+use Tavaan\Engine\Http\Exceptions\ForbiddenException;
+use Tavaan\Engine\Http\Exceptions\RouteNotFoundException;
 use Tavaan\Engine\Admin\AdminManager;
 use Tavaan\Engine\Admin\Form\Field;
 use Tavaan\Engine\Admin\Resource;
