@@ -16,7 +16,7 @@ use Tavaan\Engine\Admin\AdminManager;
  */
 final class AdminScenarioTest extends TestCase
 {
-    public function t01_form_text_field_renders_input(): void
+    public function test_t01_form_text_field_renders_input(): void
     {
         // Scenario T-01
 $f = new Form();
@@ -24,7 +24,7 @@ $f = new Form();
         $this->assertStringContainsString("<input", $html);
         $this->assertStringContainsString("type=\"text\"", $html);
     }
-    public function t02_form_select_field_renders_options(): void
+    public function test_t02_form_select_field_renders_options(): void
     {
         // Scenario T-02
 $f = new Form();
@@ -33,7 +33,7 @@ $f = new Form();
         $this->assertStringContainsString("Admin", $html);
         $this->assertStringContainsString("User", $html);
     }
-    public function t03_resource_columns_and_searchable(): void
+    public function test_t03_resource_columns_and_searchable(): void
     {
         // Scenario T-03
 $r = new Resource("posts", "PostController");
@@ -41,7 +41,7 @@ $r = new Resource("posts", "PostController");
         $this->assertSame("Posts", $r->title());
         $this->assertContains("title", $r->getSearchable());
     }
-    public function t04_admin_manager_menu(): void
+    public function test_t04_admin_manager_menu(): void
     {
         // Scenario T-04
 $mgr = new AdminManager();
