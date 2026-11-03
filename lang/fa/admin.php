@@ -1,2 +1,2 @@
 <?php
-return return ['error_access' => 'دسترسی به پنل مدیریتی مجاز نیست.'];;
+return ['error_access' => 'دسترسی به پنل مدیریتی مجاز نیست.'];
