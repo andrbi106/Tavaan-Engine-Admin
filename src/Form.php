@@ -24,7 +24,7 @@ final class Form
     }
     public function select(/* ... */): mixed
     {
-        return null;
+        return $this;
     }
     public function relation(/* ... */): mixed
     {
