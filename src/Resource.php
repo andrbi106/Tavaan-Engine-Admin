@@ -16,11 +16,11 @@ final class Resource
     }
     public function searchable(/* ... */): mixed
     {
-        return null;
+        return [];
     }
     public function filterable(/* ... */): mixed
     {
-        return null;
+        return [];
     }
     public function sortable(/* ... */): mixed
     {
