@@ -48,4 +48,21 @@ final class AdminServiceProvider
     public function boot(): void {}
     public function provides(): array { return [AdminManager::class]; }
     public function getManager(): AdminManager { if ($this->manager === null) $this->register(); return $this->manager; }
+
+    public function dashboard(/* ... */): mixed
+    {
+        return null;
+    }
+    public function menu(/* ... */): mixed
+    {
+        return null;
+    }
+    public function resource(/* ... */): mixed
+    {
+        return null;
+    }
+    public function widget(/* ... */): mixed
+    {
+        return null;
+    }
 }
