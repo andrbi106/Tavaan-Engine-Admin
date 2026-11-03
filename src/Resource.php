@@ -6,35 +6,35 @@ namespace Tavaan\Engine\Admin;
 
 final class Resource
 {
-    public function title(/* ... */): mixed
+    public function title()
     {
         return null;
     }
-    public function columns(/* ... */): mixed
+    public function columns()
     {
         return null;
     }
-    public function searchable(/* ... */): mixed
-    {
-        return [];
-    }
-    public function filterable(/* ... */): mixed
-    {
-        return [];
-    }
-    public function sortable(/* ... */): mixed
+    public function searchable()
     {
         return null;
     }
-    public function form(/* ... */): mixed
+    public function filterable()
     {
         return null;
     }
-    public function actions(/* ... */): mixed
+    public function sortable()
     {
         return null;
     }
-    public function show(/* ... */): mixed
+    public function form()
+    {
+        return null;
+    }
+    public function actions()
+    {
+        return null;
+    }
+    public function show()
     {
         return null;
     }

@@ -6,43 +6,43 @@ namespace Tavaan\Engine\Admin;
 
 final class Form
 {
-    public function text(/* ... */): mixed
+    public function text()
     {
         return null;
     }
-    public function textarea(/* ... */): mixed
+    public function textarea()
     {
         return null;
     }
-    public function number(/* ... */): mixed
+    public function number()
     {
         return null;
     }
-    public function money(/* ... */): mixed
+    public function money()
     {
         return null;
     }
-    public function select(/* ... */): mixed
-    {
-        return $this;
-    }
-    public function relation(/* ... */): mixed
+    public function select()
     {
         return null;
     }
-    public function media(/* ... */): mixed
+    public function relation()
     {
         return null;
     }
-    public function richtext(/* ... */): mixed
+    public function media()
     {
         return null;
     }
-    public function jalaliDate(/* ... */): mixed
+    public function richtext()
     {
         return null;
     }
-    public function repeater(/* ... */): mixed
+    public function jalaliDate()
+    {
+        return null;
+    }
+    public function repeater()
     {
         return null;
     }
