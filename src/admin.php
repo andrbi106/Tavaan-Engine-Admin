@@ -49,20 +49,26 @@ final class AdminServiceProvider
     public function provides(): array { return [AdminManager::class]; }
     public function getManager(): AdminManager { if ($this->manager === null) $this->register(); return $this->manager; }
 
-    public function dashboard()
+    public function dashboard(): array
     {
-        return null;
+        $manager = $this->getManager();
+        return [
+            'widgets' => $manager->getWidgets('dashboard'),
+            'settings' => $manager->getSettings(),
+            'menu' => $manager->getMenu(),
+        ];
     }
-    public function menu()
+    public function menu(): array
     {
-        return null;
+        return $this->getManager()->getMenu();
     }
-    public function resource()
+    public function resource(string $name, string $controller): Resource
     {
-        return null;
+        return new Resource($name, $controller);
     }
-    public function widget()
+    public function widget(string $name, callable $callback, ?string $position = 'dashboard'): self
     {
-        return null;
+        $this->getManager()->addWidget($name, $callback, $position);
+        return $this;
     }
 }
