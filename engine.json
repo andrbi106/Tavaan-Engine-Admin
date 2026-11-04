@@ -11,7 +11,7 @@
     }
   },
   "providers": [
-    "Tavaan\\Engine\\Admin\\AdminManagerServiceProvider"
+    "Tavaan\\Engine\\Admin\\AdminServiceProvider"
   ],
   "requires": {
     "php": ">=8.2",
