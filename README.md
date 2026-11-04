@@ -2,6 +2,8 @@
 
 > **پیشخان و CRUD Generator** — موتور Admin در فریمورک تَوان
 
+این موتور از کلاس پایهٔ `Engine` (در [Tavaan-Engine-Core](https://github.com/andrbi106/Tavaan-Engine-Core)) ارث می‌برد.
+
 ## مشخصات
 
 | فیلد | مقدار |
@@ -11,65 +13,64 @@
 | عنوان فارسی | پیشخان و CRUD Generator |
 | نسخه | `0.1.0` |
 | namespace | `Tavaan\Engine\Admin` |
-| نوع | `engine` |
-| Facade | `Admin` (accessor: `admin`) |
+| کلاس موتور | `Tavaan\Engine\Admin\AdminEngine` |
+| Facade | Admin (`admin`) |
+
+## کلاس موتور
+
+```php
+namespace Tavaan\Engine\Admin;
+
+use Tavaan\EngineCore\Engine as BaseEngine;
+use Tavaan\EngineCore\Contracts\EngineManifestInterface;
+
+final class AdminEngine extends BaseEngine
+{
+    public function __construct(EngineManifestInterface $manifest)
+    {
+        parent::__construct($manifest);
+    }
+
+    public function register(ContainerInterface $container): void
+    {
+        parent::register($container);
+        // bindingهای اختصاصی موتور
+    }
+
+    public function boot(): void
+    {
+        parent::boot();
+    }
+}
+```
+
+**فایل:** `src/AdminEngine.php`
 
 ## توضیحات
 
 M8/TVN-0078: CRUD generator declarative (۲۷ نوع فیلد، validation خودکار، jalali_date دوطرفه، sanitizer برای richtext)، منوی پویا (manifest + permission filter)، ویجت/نمودار SVG داشبورد، RTL، theme override در resources/views/vendor/admin.
 
-## Facadeها
+## وابستگی‌ها
 
-- `Tavaan\Engine\Admin\Facades\Admin`
-
-## کلاس‌های اصلی
-
-- `src/Action.php`
-- `src/Dashboard/Dashboard.php`
-- `src/Form.php`
-- `src/Form/Field.php`
-- `src/Form/Repeater.php`
-- `src/Http/AdminController.php`
-- `src/Http/DashboardController.php`
-- `src/Menu/Menu.php`
-- `src/Menu/MenuItem.php`
-- `src/Resource.php`
-- `src/Show.php`
-- `src/Support/ChartRenderer.php`
-- `src/Support/ValueTransformer.php`
-- `src/admin.php`
+**موتورهای مورد‌نیاز:** `view`, `rbac`, `orm`, `validation`, `http`
 
 ## Service Providerها
 
 - `Tavaan\Engine\Admin\AdminManagerServiceProvider`
 
-## وابستگی‌ها
+## سه درگاه ارتباط با سایر موتورها
 
-**موتورهای مورد‌نیاز:**
-
-- `view`
-- `rbac`
-- `orm`
-- `validation`
-- `http`
+| درگاه | الگو | متدهای convenience |
+|---|---|---|
+| Container | pull-based DI | `make()`, `bound()` |
+| Events | pub/sub | `dispatch()`, `listen()` |
+| EngineBus | point-to-point RPC | `call()`, `offer()` |
 
 ## نصب
 
 ```bash
 git clone https://github.com/andrbi106/Tavaan-Engine-Admin.git
 ```
-
-این موتور بخشی از فریمورک تَوان است و معمولاً به‌صورت مستقیم نصب نمی‌شود،
-بلکه توسط [Tavaan-Core](https://github.com/andrbi106/Tavaan-Core) مدیریت می‌شود.
-
-## روابط با سایر مخازن
-
-| مخزن | نقش |
-|---|---|
-| **`andrbi106/Tavaan-Engine-Admin`** (این مخزن) | موتور Admin |
-| `andrbi106/Tavaan-Engine-Core` | ساختار پایه + درگاه ارتباط موتورها |
-| `andrbi106/Tavaan-Core` | اسکلت اپلیکیشن + همهٔ موتورها |
-| `Derogaramin/Tavaan-Framework` | فریمورک مادر (monorepo) |
 
 ## مجوز
 

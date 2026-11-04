@@ -30,5 +30,6 @@
     "name": "Admin",
     "accessor": "admin"
   },
-  "notes": "M8/TVN-0078: CRUD generator declarative (۲۷ نوع فیلد، validation خودکار، jalali_date دوطرفه، sanitizer برای richtext)، منوی پویا (manifest + permission filter)، ویجت/نمودار SVG داشبورد، RTL، theme override در resources/views/vendor/admin."
+  "notes": "M8/TVN-0078: CRUD generator declarative (۲۷ نوع فیلد، validation خودکار، jalali_date دوطرفه، sanitizer برای richtext)، منوی پویا (manifest + permission filter)، ویجت/نمودار SVG داشبورد، RTL، theme override در resources/views/vendor/admin.",
+  "class": "Tavaan\\Engine\\Admin\\AdminEngine"
 }
